@@ -53,7 +53,9 @@ countries = [{'Afghanistan': 'Kabul'}, {'Albania': 'Tirana'}, {'Algeria': 'Algie
              {'Togo': 'Lomé'}, {'Tonga': 'Nukuʻalofa'}, {'Trinidad and Tobago': 'Port of Spain'}, {'Tunisia': 'Tunis'},
              {'Turkey': 'Ankara'}, {'Turkmenistan': 'Ashgabat'}, {'Tuvalu': 'Funafuti'}, {'Uganda': 'Kampala'},
              {'Ukraine': 'Kyiv'}, {'United Arab Emirates': 'Abu Dhabi'}, {'United Kingdom': 'London'},
-             {'United States of America': 'Washington, D.C.'}, {'Uruguay': 'Montevideo'}, {'Uzbekistan': 'Tashkent'}, {'Vanuatu': 'Port Vila'}, {'Vatican City (Holy See)': 'Vatican City'}, {'Venezuela': 'Caracas'}, {'Vietnam': 'Hanoi'}, {'Yemen': 'Sana\'a'}, {'Zambia': 'Lusaka'}, {'Zimbabwe': 'Harare'}]
+             {'United States of America': 'Washington, D.C.'}, {'Uruguay': 'Montevideo'}, {'Uzbekistan': 'Tashkent'},
+             {'Vanuatu': 'Port Vila'}, {'Vatican City (Holy See)': 'Vatican City'}, {'Venezuela': 'Caracas'},
+             {'Vietnam': 'Hanoi'}, {'Yemen': 'Sana\'a'}, {'Zambia': 'Lusaka'}, {'Zimbabwe': 'Harare'}]
 
 country = ''
 player_points = 0

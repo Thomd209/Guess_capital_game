@@ -89,5 +89,3 @@ if player_points > computer_points:
     print("You win!")
 elif computer_points > player_points:
     print("You lose")
-elif player_points == computer_points:
-    print("Draw")

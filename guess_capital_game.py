@@ -75,23 +75,31 @@ while player_points < 3 and computer_points < 3:
     first_wrong_country = randint(0, len(countries) - 1)
     second_wrong_country = randint(0, len(countries) - 1)
     third_wrong_country = randint(0, len(countries) - 1)
-    # Extraction the country and capital from list item
-    for key, value in countries[right_country].items():
-        random_country = key
-        right_capital = value
 
-    # Extraction the wrong capital from list item
-    for value in countries[first_wrong_country].values():
-        first_wrong_capital = value
 
-    # Extraction the wrong capital from list item
-    for value in countries[second_wrong_country].values():
-        second_wrong_capital = value
+    def get_capitals():
+        # Extraction the country and capital from list item
+        global first_wrong_capital, right_capital, random_country, second_wrong_capital, third_wrong_capital
+        for key, value in countries[right_country].items():
+            random_country = key
+            right_capital = value
 
-    # Extraction the wrong capital from list item
-    for value in countries[third_wrong_country].values():
-        third_wrong_capital = value
+        # Extraction the wrong capital from list item
+        for value in countries[first_wrong_country].values():
+            first_wrong_capital = value
 
+        # Extraction the wrong capital from list item
+        for value in countries[second_wrong_country].values():
+            second_wrong_capital = value
+
+        # Extraction the wrong capital from list item
+        for value in countries[third_wrong_country].values():
+            third_wrong_capital = value
+
+        return random_country, right_capital, first_wrong_capital, second_wrong_capital, third_wrong_capital
+
+
+    random_country, right_capital, first_wrong_capital, second_wrong_capital, third_wrong_capital = get_capitals()
     # Answer options
     possible_answers = [right_capital, first_wrong_capital, second_wrong_capital, third_wrong_capital]
     # Shuffling the list randomly
@@ -104,6 +112,7 @@ while player_points < 3 and computer_points < 3:
     # Inviting the user to enter the name of the capital
     player_answer = input('Input a capital of this country: ')
 
+
     # Function that checks the player answer
     def check_answer(answer):
         for capital in countries[right_country].values():
@@ -111,6 +120,7 @@ while player_points < 3 and computer_points < 3:
                 return True
             else:
                 return False
+
 
     # Checking the user answer
     if check_answer(player_answer):
@@ -127,7 +137,15 @@ while player_points < 3 and computer_points < 3:
     del countries[right_country]
 
 # Winner determination
-if player_points > computer_points:
+def determinate_winner(player_scores, computer_scores):
+    if player_scores > computer_scores:
+        return True
+    elif computer_scores > player_scores:
+        return False
+
+
+winner = determinate_winner(player_points, computer_points)
+if winner:
     print("You win!")
-elif computer_points > player_points:
+elif winner is False:
     print("You lose")
